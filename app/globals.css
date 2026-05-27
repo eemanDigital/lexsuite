@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #112240;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dim: #8b6d2f;
+  --white: #ffffff;
+  --off-white: #f8f6f1;
+  --grey-100: #f2f0eb;
+  --grey-400: #9a9585;
+  --grey-600: #6b6558;
+  --text-dark: #1a1612;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(201, 168, 76, 0.2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), serif;
+}
+
+h1[id], h2[id], h3[id], h4[id] {
+  scroll-margin-top: 6rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0) 0%,
+    rgba(201, 168, 76, 0.95) 50%,
+    rgba(201, 168, 76, 0) 100%
+  );
+}
+
+.bg-circuit {
+  background-image:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(201, 168, 76, 0.12) 0,
+      transparent 10%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(201, 168, 76, 0.08) 0,
+      transparent 12%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    30px 30px;
+}
