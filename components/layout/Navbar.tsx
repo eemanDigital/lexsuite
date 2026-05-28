@@ -13,7 +13,6 @@ const navLinks = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -44,35 +43,33 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 sm:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 sm:px-8">
         <Link href="/" className="flex items-center">
-          <span className="relative h-[76px] w-auto overflow-hidden shrink-0 sm:h-[90px]">
+          <span className="relative h-[60px] w-auto overflow-hidden shrink-0 sm:h-[76px]">
             <Image
               src="/lexsuite-logo.png"
               alt="LexSuite logo"
-              width={320}
-              height={90}
-              className="h-[76px] w-auto object-contain sm:h-[90px]"
+              width={280}
+              height={76}
+              className="h-[60px] w-auto object-contain sm:h-[76px]"
               priority
             />
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-10 text-base font-semibold sm:flex">
+        <nav className="hidden items-center gap-8 text-base font-semibold sm:flex">
           {navLinks.map((link) =>
             link.label === "Practice Areas" ? (
               <div
                 key={link.href}
-                className="relative"
-                onMouseEnter={() => setMenuOpen(true)}
-                onMouseLeave={() => setMenuOpen(false)}>
+                className="relative group">
                 <Link
                   href={link.href}
                   className="text-navy transition hover:text-gold">
                   {link.label}
                 </Link>
-                {menuOpen && (
-                  <div className="absolute left-0 top-full z-50 mt-3 w-[560px] rounded-2xl bg-white p-6 shadow-lg text-navy">
+                <div className="absolute left-0 top-full z-50 pt-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200">
+                  <div className="w-[560px] rounded-2xl bg-white p-6 shadow-lg text-navy border border-grey-100">
                     <div className="grid grid-cols-2 gap-6">
                       <div>
                         <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-grey-600">Core Services</h4>
@@ -96,7 +93,7 @@ export function Navbar() {
                       </div>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             ) : (
               <Link

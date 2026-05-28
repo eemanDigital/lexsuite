@@ -1,15 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, MapPin } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-navy text-white">
-      {/* Map placeholder */}
-      <div className="h-48 w-full bg-navy-mid relative overflow-hidden">
-        <div className="flex h-full items-center justify-center text-grey-600">
-          <MapPin size={32} className="text-gold" />
-          <span className="ml-2 text-sm text-grey-400">Victoria Island, Lagos, Nigeria</span>
+      {/* Map */}
+      <div className="h-52 w-full relative overflow-hidden bg-navy-mid">
+        <iframe
+          src="https://www.google.com/maps?q=Suite+412+MKK+Plaza+Igbani+Street+Jabi+Abuja+Nigeria&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0, filter: "grayscale(0.5) brightness(0.7) contrast(1.1)" }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="LexSuite Solicitors - Abuja Office"
+        />
+        <div className="absolute bottom-3 left-3 rounded-lg bg-navy/80 px-4 py-2.5 backdrop-blur-sm">
+          <p className="text-sm font-semibold text-white">Suite 412, MKK Plaza</p>
+          <p className="text-xs text-grey-400">I.T Igbani Street, Jabi, Abuja</p>
         </div>
       </div>
 
