@@ -1,5 +1,6 @@
 import { getAllPosts } from "../../lib/mdx";
 import { BlogIndex } from "../../components/blog/BlogIndex";
+import { ScrollReveal } from "../../components/ui/ScrollReveal";
 
 export const metadata = {
   title: "Blog | LexSuite Solicitors",
@@ -10,5 +11,9 @@ export const metadata = {
 export default async function BlogPage() {
   const posts = getAllPosts();
 
-  return <BlogIndex posts={posts} />;
+  return (
+    <ScrollReveal>
+      <BlogIndex posts={posts} />
+    </ScrollReveal>
+  );
 }

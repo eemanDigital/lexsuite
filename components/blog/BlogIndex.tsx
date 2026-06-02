@@ -1,6 +1,7 @@
 "use client";
 
 import { BlogCard } from "./BlogCard";
+import { StaggerReveal, StaggerItem } from "../ui/ScrollReveal";
 
 type Post = {
   slug: string;
@@ -46,11 +47,11 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
 
       <div className="lg:ml-16">
         <div className="max-w-7xl mx-auto px-6 py-12 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {posts.map((post, index) => {
               const variant = getVariant(index);
               return (
-                <div
+                <StaggerItem
                   key={post.slug}
                   className={
                     variant === "featured"
@@ -67,10 +68,10 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
                     excerpt={post.excerpt}
                     slug={post.slug}
                   />
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerReveal>
         </div>
       </div>
     </div>

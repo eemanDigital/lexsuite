@@ -126,12 +126,29 @@ export function ServiceTimeline() {
   const activeService = services[activeIndex];
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-off-white py-24">
-      {/* Decorative background */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full border border-gold/5" />
-        <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full border border-gold/5" />
-      </div>
+    <section className="relative overflow-hidden py-24">
+      {/* Silk gradient base */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-off-white to-gold/[0.02]" />
+
+      {/* Flowing silk orbs */}
+      <div className="pointer-events-none absolute -top-40 -right-32 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-gold/12 via-gold/5 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-[450px] w-[450px] rounded-full bg-gradient-to-tr from-gold/8 via-accent-blue/[0.02] to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute top-1/4 right-1/4 h-[250px] w-[250px] rounded-full bg-gradient-to-l from-gold/6 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute bottom-1/3 left-1/3 h-[200px] w-[200px] rounded-full bg-gradient-to-r from-gold/5 to-transparent blur-3xl" />
+
+      {/* Subtle flowing wave lines */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
+
+      {/* Decorative flowing curve — top */}
+      <svg className="pointer-events-none absolute top-0 left-0 w-full h-24 text-gold/[0.04]" preserveAspectRatio="none" viewBox="0 0 1440 100" fill="currentColor">
+        <path d="M0,30 C360,90 720,10 1440,50 L1440,0 L0,0 Z" />
+      </svg>
+
+      {/* Decorative flowing curve — bottom */}
+      <svg className="pointer-events-none absolute bottom-0 left-0 w-full h-24 text-gold/[0.03]" preserveAspectRatio="none" viewBox="0 0 1440 100" fill="currentColor">
+        <path d="M0,70 C360,10 720,90 1440,30 L1440,100 L0,100 Z" />
+      </svg>
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         <div className="mb-14 text-center">
@@ -159,7 +176,7 @@ export function ServiceTimeline() {
               animate={{ top: indicatorTop - 14 }}
               transition={{ type: "spring", stiffness: 180, damping: 24 }}>
               <div className="flex h-7 w-[19px] items-center justify-center">
-                <div className="h-[14px] w-[14px] rounded-full bg-gold shadow-[0_0_20px_rgba(201,168,76,0.45)]" />
+                <div className="h-[14px] w-[14px] rounded-full bg-gold shadow-[0_0_20px_rgba(0,216,204,0.45)]" />
               </div>
             </motion.div>
 
@@ -208,7 +225,7 @@ export function ServiceTimeline() {
                         }`}>
                         {service.title}
                       </span>
-                      <span className="mt-0.5 block truncate text-sm text-grey-500">
+                      <span className="mt-0.5 block truncate text-sm font-medium text-grey-500">
                         {service.summary}
                       </span>
                     </div>
@@ -257,7 +274,7 @@ export function ServiceTimeline() {
                 </div>
 
                 {/* Summary */}
-                <p className="mt-6 text-base leading-7 text-grey-600 sm:text-lg">
+                <p className="mt-6 text-base leading-7 text-grey-600 font-medium sm:text-lg">
                   {activeService.summary}
                 </p>
 
@@ -285,7 +302,7 @@ export function ServiceTimeline() {
                 {/* CTA */}
                 <Link
                   href={activeService.href}
-                  className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-navy px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#0d1a30] hover:shadow-lg">
+                  className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-navy px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#3D3D3D] hover:shadow-lg">
                   <span>Explore {activeService.title}</span>
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" strokeWidth={3} />
                 </Link>

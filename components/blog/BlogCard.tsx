@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ScrollReveal } from "../ui/ScrollReveal";
 
 type BlogCardProps = {
   variant?: "featured" | "standard" | "text-only";
@@ -38,6 +39,7 @@ export function BlogCard({
   const showImage = hasRealImage(image) && variant !== "text-only";
 
   return (
+    <ScrollReveal>
     <Link href={`/blog/${slug}`} className="group block">
       <article className="flex flex-col">
         {showImage && (
@@ -62,11 +64,12 @@ export function BlogCard({
         </h3>
 
         {excerpt && variant === "featured" && (
-          <p className="text-grey-600 text-sm leading-relaxed line-clamp-3">
+          <p className="text-grey-600 text-sm leading-relaxed line-clamp-3 font-medium">
             {excerpt}
           </p>
         )}
       </article>
     </Link>
+    </ScrollReveal>
   );
 }

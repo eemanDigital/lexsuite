@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ScrollReveal } from "../../../components/ui/ScrollReveal";
+import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
   title: "NDPA Data Privacy Compliance | LexSuite",
@@ -9,68 +8,76 @@ export const metadata = {
 
 export default function DataPrivacyPage() {
   return (
-    <main className="bg-off-white py-20">
-      <section className="mx-auto max-w-6xl px-6 sm:px-8">
-        <ScrollReveal>
-          <div className="rounded-3xl bg-navy px-8 py-14 text-white shadow-sm">
-            <p className="text-sm uppercase tracking-[0.35em] text-gold">
-              NDPA 2023 Data Privacy Compliance
-            </p>
-            <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
-              NDPA compliance is not optional. We make it simple.
-            </h1>
-            <p className="mt-6 max-w-3xl text-base leading-7 text-grey-200">
-              The NDPA penalties are real and enforcement is accelerating. We help
-              Nigerian companies document lawful processing, assess risk, and
-              respond to breaches.
-            </p>
-          </div>
-        </ScrollReveal>
+    <main>
+      <ServiceDetailHero
+        label="NDPA 2023 Data Privacy Compliance"
+        title="NDPA compliance is not optional. We make it simple."
+        subtitle="The NDPA penalties are real and enforcement is accelerating. We help Nigerian companies document lawful processing, assess risk, and respond to breaches."
+      />
 
-        <section className="mt-12 grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold text-navy">The problem</h2>
-            <p className="mt-4 text-sm leading-7 text-grey-600">
+      <ServiceDetailConnector />
+
+      <ServiceDetailSection className="bg-white">
+        <ServiceDetailGrid>
+          <ServiceDetailFeatureBlock title="The problem">
+            <p>
               Many businesses collect personal data without a lawful basis or
               documented policies, leaving them exposed to fines, reputational
               damage and compliance gaps.
             </p>
-            <div className="mt-8 rounded-3xl bg-grey-100 p-5 text-sm text-grey-700">
-              <p>
-                <strong>Privacy gaps are business risks.</strong> Breaches and
-                non-compliance can damage trust and slow growth.
-              </p>
+            <div className="mt-6 rounded-2xl bg-gold/5 p-6 text-grey-700 ring-1 ring-gold/10">
+              <p className="font-bold text-navy">Privacy gaps are business risks.</p>
+              <p className="mt-1">Breaches and non-compliance can damage trust and slow growth.</p>
             </div>
-          </div>
-          <div className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold text-navy">Who this is for</h2>
-            <ul className="mt-4 space-y-3 text-sm text-grey-600">
-              <li>SaaS businesses collecting user data</li>
-              <li>E-commerce and fintech platforms</li>
-              <li>Any Nigerian company processing customer or employee data</li>
-            </ul>
-            <div className="mt-8 rounded-3xl bg-grey-100 p-5 text-sm text-grey-700">
-              <p className="font-semibold text-navy">Essential for growth</p>
-              <p>We help you turn privacy compliance into a competitive advantage.</p>
-            </div>
-          </div>
-        </section>
+          </ServiceDetailFeatureBlock>
 
-        <section className="mt-12 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold text-navy">Our service</h2>
-            <ul className="mt-6 space-y-3 text-sm text-grey-600">
-              <li>Full NDPA compliance audit</li>
-              <li>Product-specific privacy policy</li>
-              <li>Data protection impact assessment (DPIA)</li>
-              <li>Data processing agreements with vendors</li>
-              <li>Breach response plan and notification advisory</li>
-              <li>NDPC registration guidance</li>
+          <ServiceDetailFeatureBlock title="Who this is for" accent>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                <span>SaaS businesses collecting user data</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                <span>E-commerce and fintech platforms</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                <span>Any Nigerian company processing customer or employee data</span>
+              </li>
             </ul>
+            <div className="mt-8 rounded-2xl bg-white/10 p-5 text-sm text-grey-200">
+              <p className="font-bold text-gold">Essential for growth</p>
+              <p className="mt-1">We help you turn privacy compliance into a competitive advantage.</p>
+            </div>
+          </ServiceDetailFeatureBlock>
+        </ServiceDetailGrid>
+      </ServiceDetailSection>
+
+      <ServiceDetailSection className="bg-gradient-to-b from-white to-off-white">
+        <div className="mx-auto max-w-5xl">
+          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">Our Service</span>
+          <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">What we deliver</h2>
+          <div className="mt-8">
+            <ServiceDetailBullets
+              items={[
+                "Full NDPA compliance audit",
+                "Product-specific privacy policy",
+                "Data protection impact assessment (DPIA)",
+                "Data processing agreements with vendors",
+                "Breach response plan and notification advisory",
+                "NDPC registration guidance",
+              ]}
+              columns={2}
+            />
           </div>
-          <div className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold text-navy">What we fix</h2>
-            <div className="mt-6 space-y-4 text-sm text-grey-600">
+        </div>
+      </ServiceDetailSection>
+
+      <ServiceDetailSection className="bg-white">
+        <ServiceDetailGrid>
+          <ServiceDetailFeatureBlock title="What we fix">
+            <div className="space-y-5">
               <p>
                 Weak or missing privacy documentation, unclear legal basis for
                 processing, and untested breach response processes.
@@ -80,22 +87,14 @@ export default function DataPrivacyPage() {
                 impact assessments, and governance frameworks.
               </p>
             </div>
-          </div>
-        </section>
+          </ServiceDetailFeatureBlock>
 
-        <section className="mt-12 rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-          <h2 className="text-2xl font-semibold text-navy">Pricing</h2>
-          <p className="mt-4 text-sm leading-7 text-grey-600">
-            Included in growth packages from ₦750,000; standalone from ₦400,000
-            to ₦800,000.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-navy transition hover:bg-gold-light">
-            Book a consultation
-          </Link>
-        </section>
-      </section>
+          <ServiceDetailPricing
+            price="From ₦400,000 to ₦800,000"
+            description="Included in growth packages from ₦750,000; standalone audits also available."
+          />
+        </ServiceDetailGrid>
+      </ServiceDetailSection>
     </main>
   );
 }

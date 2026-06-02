@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
   title: "Startup Structuring & Investor Readiness | LexSuite",
@@ -8,67 +8,85 @@ export const metadata = {
 
 export default function StartupAdvisoryPage() {
   return (
-    <main className="bg-off-white py-20">
-      <section className="mx-auto max-w-6xl px-6 sm:px-8">
-        <div className="rounded-3xl bg-navy px-8 py-14 text-white shadow-sm">
-          <p className="text-sm uppercase tracking-[0.35em] text-gold">
-            Startup Advisory
-          </p>
-          <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
-            Build to be fundable from day one.
-          </h1>
-          <p className="mt-6 max-w-3xl text-base leading-7 text-grey-200">
-            Investors expect legal readiness before they write the first cheque.
-            We help founders build the structures, documents and disclosures
-            that make due diligence smooth.
-          </p>
-        </div>
+    <main>
+      <ServiceDetailHero
+        label="Startup Advisory"
+        title="Build to be fundable from day one."
+        subtitle="Investors expect legal readiness before they write the first cheque. We help founders build the structures, documents and disclosures that make due diligence smooth."
+      />
 
-        <section className="mt-12 grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold text-navy">The problem</h2>
-            <p className="mt-4 text-sm leading-7 text-grey-600">
+      <ServiceDetailConnector />
+
+      <ServiceDetailSection className="bg-white">
+        <ServiceDetailGrid>
+          <ServiceDetailFeatureBlock title="The problem">
+            <p>
               Startups often enter fundraising with incomplete legal packaging,
               which delays deals, forces last-minute renegotiation and weakens
               valuation.
             </p>
-          </div>
-          <div className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold text-navy">
-              Who this is for
-            </h2>
-            <ul className="mt-4 space-y-3 text-sm text-grey-600">
-              <li>Seed-stage founders preparing to pitch investors</li>
-              <li>Companies 3-6 months from fundraise</li>
-              <li>Teams building a scalable shareholder structure</li>
+          </ServiceDetailFeatureBlock>
+
+          <ServiceDetailFeatureBlock title="Who this is for" accent>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                <span>Seed-stage founders preparing to pitch investors</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                <span>Companies 3-6 months from fundraise</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                <span>Teams building a scalable shareholder structure</span>
+              </li>
             </ul>
+          </ServiceDetailFeatureBlock>
+        </ServiceDetailGrid>
+      </ServiceDetailSection>
+
+      <ServiceDetailSection className="bg-gradient-to-b from-white to-off-white">
+        <div className="mx-auto max-w-5xl">
+          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">Our Service</span>
+          <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">What we deliver</h2>
+          <div className="mt-8">
+            <ServiceDetailBullets
+              items={[
+                "Shareholders' agreement with investor protections",
+                "Cap table modelling for multiple rounds",
+                "ESOP design and documentation",
+                "Due diligence data room setup",
+                "Term sheet review for up to three rounds",
+                "Startup Act advisory for eligibility and benefits",
+              ]}
+              columns={2}
+            />
           </div>
-        </section>
+        </div>
+      </ServiceDetailSection>
 
-        <section className="mt-12 rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-          <h2 className="text-2xl font-semibold text-navy">Our service</h2>
-          <ul className="mt-6 grid gap-3 text-sm text-grey-600 sm:grid-cols-2">
-            <li>Shareholders' agreement with investor protections</li>
-            <li>Cap table modelling for multiple rounds</li>
-            <li>ESOP design and documentation</li>
-            <li>Due diligence data room setup</li>
-            <li>Term sheet review for up to three rounds</li>
-            <li>Startup Act advisory for eligibility and benefits</li>
-          </ul>
-        </section>
+      <ServiceDetailSection className="bg-white">
+        <ServiceDetailGrid>
+          <ServiceDetailFeatureBlock title="Why it matters">
+            <div className="space-y-5">
+              <p>
+                Investor-ready legal packaging signals professionalism and
+                reduces friction during fundraising.
+              </p>
+              <p>
+                Our work ensures your cap table, governance and disclosures
+                meet the standards institutional investors expect.
+              </p>
+            </div>
+          </ServiceDetailFeatureBlock>
 
-        <section className="mt-12 rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-          <h2 className="text-2xl font-semibold text-navy">Pricing</h2>
-          <p className="mt-4 text-sm leading-7 text-grey-600">
-            Investor-Ready package from ₦1,500,000.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-navy transition hover:bg-gold-light">
-            Book a consultation
-          </Link>
-        </section>
-      </section>
+          <ServiceDetailPricing
+            price="From ₦1,500,000"
+            description="Investor-Ready package — designed for startups preparing for fundraising and diligence."
+          />
+        </ServiceDetailGrid>
+      </ServiceDetailSection>
     </main>
   );
 }

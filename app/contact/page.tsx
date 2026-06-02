@@ -34,6 +34,7 @@ export default function ContactPage() {
           </div>
         </ScrollReveal>
 
+        <ScrollReveal>
         <form
           action={formAction}
           method="POST"
@@ -108,7 +109,9 @@ export default function ContactPage() {
             Submit
           </button>
         </form>
+        </ScrollReveal>
 
+        <ScrollReveal>
         <div className="mt-12 text-center">
           <p className="text-sm text-grey-500">
             Or reach us directly at{' '}
@@ -121,6 +124,7 @@ export default function ContactPage() {
             </a>
           </p>
         </div>
+        </ScrollReveal>
       </section>
     </main>
   );

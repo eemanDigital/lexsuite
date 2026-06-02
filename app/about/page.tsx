@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ScrollReveal } from "../../components/ui/ScrollReveal";
+import { ScrollReveal, StaggerReveal, StaggerItem } from "../../components/ui/ScrollReveal";
 import { TeamGrid } from "../../components/home/TeamGrid";
 import { Award, Shield, Scale, Users, Target } from "lucide-react";
 
@@ -66,6 +66,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
+            <ScrollReveal direction="left">
             <div className="space-y-5 rounded-2xl border border-grey-200 bg-white p-10">
               <h2 className="text-3xl font-bold text-navy">Our story</h2>
               <p className="text-base leading-7 text-grey-600">
@@ -81,6 +82,8 @@ export default function AboutPage() {
                 earliest stage of product development.
               </p>
             </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right">
             <div className="space-y-5 rounded-2xl border border-grey-200 bg-white p-10">
               <h2 className="text-3xl font-bold text-navy">Why LexSuite</h2>
               <p className="text-base leading-7 text-grey-600">
@@ -95,6 +98,7 @@ export default function AboutPage() {
                 Book a discovery call
               </Link>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -106,10 +110,10 @@ export default function AboutPage() {
             <p className="text-sm uppercase tracking-[0.35em] text-gold">Brand pillars</p>
             <h2 className="mt-4 text-3xl font-bold text-navy">Principles that guide our work</h2>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {pillars.map((pillar) => (
+              <StaggerItem key={pillar.title}>
               <div
-                key={pillar.title}
                 className="rounded-2xl border border-grey-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-gold">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-gold/5">
                   <pillar.icon size={22} className="text-gold" />
@@ -117,20 +121,23 @@ export default function AboutPage() {
                 <h3 className="mt-5 text-xl font-semibold text-navy">{pillar.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-grey-600">{pillar.description}</p>
               </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
       {/* Team */}
       <section className="bg-white py-16">
+        <ScrollReveal>
         <TeamGrid />
+        </ScrollReveal>
       </section>
 
       {/* Accreditations */}
       <section className="bg-off-white py-16">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="grid gap-6 md:grid-cols-3">
+          <StaggerReveal className="grid gap-6 md:grid-cols-3">
             {[
               {
                 icon: Award,
@@ -148,15 +155,16 @@ export default function AboutPage() {
                 detail: "Specialist support for data protection and AI governance.",
               },
             ].map((item) => (
+              <StaggerItem key={item.title}>
               <div
-                key={item.title}
                 className="rounded-2xl border border-grey-200 bg-white p-8 shadow-sm">
                 <item.icon size={28} className="text-gold" />
                 <p className="mt-4 text-sm uppercase tracking-[0.35em] text-gold">{item.title}</p>
                 <p className="mt-3 text-sm leading-7 text-grey-600">{item.detail}</p>
               </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
     </main>

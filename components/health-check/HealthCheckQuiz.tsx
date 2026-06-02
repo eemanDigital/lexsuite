@@ -156,7 +156,7 @@ export default function HealthCheckQuiz() {
         </div>
 
         <aside className="space-y-6 rounded-3xl border border-grey-200 bg-[#081122] p-8 text-white shadow-sm">
-          <div className="rounded-3xl bg-[#112240] p-6">
+          <div className="rounded-3xl bg-navy-mid p-6">
             <p className="text-sm uppercase tracking-[0.35em] text-gold">
               Exposure score
             </p>

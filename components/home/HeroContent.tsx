@@ -49,7 +49,7 @@ export function HeroContent() {
       </motion.h1>
 
       <motion.p
-        className="mt-6 max-w-2xl text-lg text-grey-100 sm:text-xl"
+        className="mt-6 max-w-2xl text-lg text-grey-100 font-medium sm:text-xl"
         variants={itemVariants}
       >
         Nigeria&apos;s foremost legal-tech solicitors. We register, protect,

@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "../../../components/ui/ScrollReveal";
+import { ServiceDetailHero, ServiceDetailSection, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
   title: "AI Legal Services | LexSuite Solicitors",
@@ -89,59 +91,91 @@ const sections = [
 
 export default function AILegalPage() {
   return (
-    <main className="bg-off-white py-20">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="rounded-3xl bg-navy px-8 py-14 text-white shadow-sm">
-          <ScrollReveal>
-            <p className="text-sm uppercase tracking-[0.35em] text-gold">
-              AI Legal Services
-            </p>
-            <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
-              The global AI legal crisis is here. We help Nigerian companies
-              survive it.
-            </h1>
-            <p className="mt-6 max-w-3xl text-base leading-7 text-grey-200">
-              LexSuite is uniquely positioned to diagnose both the technical
-              root of AI risk and the legal liability that flows from it.
-            </p>
-          </ScrollReveal>
-        </div>
+    <main>
+      <ServiceDetailHero
+        label="AI Legal Services"
+        title="The global AI legal crisis is here. We help Nigerian companies survive it."
+        subtitle="LexSuite is uniquely positioned to diagnose both the technical root of AI risk and the legal liability that flows from it."
+      />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {sections.map((section) => (
-            <Link
-              key={section.id}
-              href={`#${section.id}`}
-              className="rounded-3xl border border-grey-200 bg-white p-8 text-sm font-semibold text-navy transition hover:border-gold hover:bg-grey-50">
-              {section.title}
-            </Link>
-          ))}
-        </div>
+      <ServiceDetailConnector />
 
-        <div className="mt-16 space-y-16">
-          {sections.map((section) => (
-            <section
-              key={section.id}
-              id={section.id}
-              className="rounded-3xl border border-grey-200 bg-white p-10 shadow-sm">
-              <h2 className="text-3xl font-semibold text-navy">
+      {/* Service navigation links */}
+      <ServiceDetailSection className="bg-white">
+        <div className="mx-auto max-w-6xl">
+          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">Jump to</span>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {sections.map((section) => (
+              <Link
+                key={section.id}
+                href={`#${section.id}`}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold/5 to-gold/[0.02] p-6 ring-1 ring-gold/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-gold-lg">
+                <div className="pointer-events-none absolute -inset-full -skew-x-12 bg-gradient-to-r from-transparent via-gold/10 to-transparent transition-all duration-700 group-hover:inset-0" />
+                <span className="relative text-lg font-bold text-navy transition-colors group-hover:text-gold">
+                  {section.title}
+                </span>
+                <ArrowRight size={16} className="relative mt-2 text-gold transition-transform group-hover:translate-x-1" strokeWidth={3} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </ServiceDetailSection>
+
+      {/* Detailed sections */}
+      <div className="space-y-6">
+        {sections.map((section, i) => (
+          <ServiceDetailSection
+            key={section.id}
+            className={i % 2 === 0 ? "bg-white" : "bg-gradient-to-b from-white to-off-white"}>
+            <div id={section.id} className="mx-auto max-w-6xl scroll-mt-24">
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">
+                {`Service 0${i + 1}`}
+              </span>
+              <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
                 {section.title}
               </h2>
-              <p className="mt-4 text-sm leading-7 text-grey-600">
+              <p className="mt-4 max-w-3xl text-lg leading-relaxed text-grey-600 sm:text-xl">
                 {section.description}
               </p>
-              <ul className="mt-6 space-y-3 text-sm text-grey-700">
+              <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {section.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-gold" />
-                    <span>{bullet}</span>
-                  </li>
+                  <div key={bullet} className="flex items-start gap-3 rounded-2xl bg-white p-5 ring-1 ring-grey-200">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                    <span className="text-base font-medium text-text-dark">{bullet}</span>
+                  </div>
                 ))}
-              </ul>
-            </section>
-          ))}
-        </div>
+              </div>
+            </div>
+          </ServiceDetailSection>
+        ))}
       </div>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[#061b34] to-[#001226] py-24">
+        <div className="pointer-events-none absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-gold/10 to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-gold/8 to-transparent blur-3xl" />
+        <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8">
+          <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Ready to secure your AI future?
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-grey-200 sm:text-xl">
+            Get in touch for a confidential discussion about your AI legal needs.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-base font-bold text-navy transition hover:brightness-95">
+              Book a Consultation
+              <ArrowRight size={18} strokeWidth={3} />
+            </Link>
+            <Link
+              href="mailto:hello@lexsuite.com.ng"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-4 text-base font-semibold text-white backdrop-blur transition hover:bg-white/10">
+              hello@lexsuite.com.ng
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

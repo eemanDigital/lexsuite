@@ -68,8 +68,8 @@ export function Navbar() {
                   className="text-navy transition hover:text-gold">
                   {link.label}
                 </Link>
-                <div className="absolute left-0 top-full z-50 pt-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200">
-                  <div className="w-[560px] rounded-2xl bg-white p-6 shadow-lg text-navy border border-grey-100">
+                <div className="absolute left-0 right-auto top-full z-50 pt-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200">
+                  <div className="w-[80vw] max-w-[560px] min-w-[420px] rounded-2xl bg-white p-6 shadow-lg text-navy border border-grey-100">
                     <div className="grid grid-cols-2 gap-6">
                       <div>
                         <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-grey-600">Core Services</h4>
