@@ -68,6 +68,31 @@ select {
   font: inherit;
 }
 
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grey-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey-500);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-400) var(--off-white);
+}
+
 .section-divider {
   height: 1px;
   background: linear-gradient(

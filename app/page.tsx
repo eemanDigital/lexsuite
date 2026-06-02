@@ -601,42 +601,90 @@ export default async function HomePage() {
       </section>
 
       {/* ─── BLOG / CASE STUDIES ─── */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="mb-12 flex items-end justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-gold">
-                Insights
-              </p>
-              <h2 className="mt-3 text-3xl font-bold text-navy">
-                Latest from LexSuite
-              </h2>
-            </div>
-            <Link
-              href="/blog"
-              className="hidden text-sm font-semibold text-navy/60 transition hover:text-navy sm:inline-block">
-              View all posts →
-            </Link>
+          <div className="mb-14 text-center lg:text-left">
+            <p className="text-sm uppercase tracking-[0.35em] font-semibold text-gold">
+              Insights
+            </p>
+            <h2 className="mt-3 text-4xl font-bold text-navy sm:text-5xl">
+              Latest from LexSuite
+            </h2>
           </div>
-          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-            {posts.map((post) => (
-              <StaggerItem key={post.slug}>
-                <BlogCard
-                  key={post.slug}
-                  variant="standard"
-                  image={post.coverImage}
-                  date={post.date}
-                  category={post.category}
-                  title={post.title}
-                  slug={post.slug}
-                />
-              </StaggerItem>
-            ))}
-          </StaggerReveal>
-          <div className="mt-10 text-center sm:hidden">
-            <Link href="/blog" className="text-sm font-semibold text-navy">
-              View all posts →
-            </Link>
+
+          <div className="space-y-16">
+            {/* Featured article */}
+            {posts[0] && (
+              <ScrollReveal direction="up" distance={30}>
+                <Link href={`/blog/${posts[0].slug}`} className="group block">
+                  <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_1fr]">
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-3xl">
+                      <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-gold/5" />
+                      <div className="absolute inset-0 flex items-center justify-center text-6xl font-serif font-bold text-gold/20 select-none">
+                        {posts[0].title.charAt(0)}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 text-sm font-semibold text-grey-500 mb-3">
+                        <time dateTime={posts[0].date}>
+                          {new Date(posts[0].date).toLocaleDateString("en-US", {
+                            month: "long",
+                            day: "numeric",
+                            year: "numeric",
+                          })}
+                        </time>
+                        <span className="text-grey-300">|</span>
+                        <span className="uppercase tracking-[0.15em] text-gold">
+                          {posts[0].category}
+                        </span>
+                      </div>
+                      <h3 className="text-3xl font-bold text-navy transition-colors duration-300 group-hover:text-gold sm:text-4xl lg:text-5xl leading-[1.15]">
+                        {posts[0].title}
+                      </h3>
+                      {posts[0].excerpt && (
+                        <p className="mt-4 text-lg leading-relaxed text-grey-500 line-clamp-3">
+                          {posts[0].excerpt}
+                        </p>
+                      )}
+                      <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold transition-all group-hover:gap-3">
+                        <span>Read article</span>
+                        <span aria-hidden="true" className="text-lg">&rarr;</span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            )}
+
+            {/* Recent articles */}
+            {posts.length > 1 && (
+              <div>
+                <div className="mb-8 flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-navy sm:text-xl">
+                    More articles
+                  </h3>
+                  <Link
+                    href="/blog"
+                    className="text-sm font-semibold text-gold transition hover:brightness-75">
+                    See all posts &rarr;
+                  </Link>
+                </div>
+                <div className="grid gap-8 sm:grid-cols-2">
+                  {posts.slice(1).map((post) => (
+                    <StaggerItem key={post.slug}>
+                      <BlogCard
+                        variant="standard"
+                        image={post.coverImage}
+                        date={post.date}
+                        category={post.category}
+                        title={post.title}
+                        slug={post.slug}
+                      />
+                    </StaggerItem>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

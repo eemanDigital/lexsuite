@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ScrollReveal } from "../ui/ScrollReveal";
 
 type BlogCardProps = {
   variant?: "featured" | "standard" | "text-only";
@@ -39,11 +38,10 @@ export function BlogCard({
   const showImage = hasRealImage(image) && variant !== "text-only";
 
   return (
-    <ScrollReveal>
     <Link href={`/blog/${slug}`} className="group block">
       <article className="flex flex-col">
-        {showImage && (
-          <div className="relative aspect-[16/10] overflow-hidden mb-5">
+        {showImage ? (
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-5">
             <Image
               src={image!}
               alt={title}
@@ -51,7 +49,13 @@ export function BlogCard({
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-        )}
+        ) : variant !== "text-only" ? (
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-5 bg-gradient-to-br from-gold/10 to-gold/5 flex items-center justify-center">
+            <div className="text-4xl font-serif font-bold text-gold/30 select-none">
+              {title.charAt(0)}
+            </div>
+          </div>
+        ) : null}
 
         <div className="flex items-center gap-2 text-sm font-medium text-grey-600 mb-2">
           <time dateTime={date}>{formatDate(date)}</time>
@@ -70,6 +74,5 @@ export function BlogCard({
         )}
       </article>
     </Link>
-    </ScrollReveal>
   );
 }
