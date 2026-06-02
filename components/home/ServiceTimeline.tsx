@@ -3,7 +3,16 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Building2, Shield, Lock, Cpu, Zap, Scale, ArrowRight, type LucideIcon } from "lucide-react";
+import {
+  Building2,
+  Shield,
+  Lock,
+  Cpu,
+  Zap,
+  Scale,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react";
 
 interface ServiceItem {
   title: string;
@@ -18,7 +27,8 @@ const services: ServiceItem[] = [
     title: "Corporate Structuring",
     href: "/services/corporate",
     icon: Building2,
-    summary: "CAC registration and founder-friendly governance for digital companies.",
+    summary:
+      "CAC registration and founder-friendly governance for digital companies.",
     details: [
       "Company registration with CAC in 15 business days",
       "Memorandum & Articles of Association drafted",
@@ -31,7 +41,8 @@ const services: ServiceItem[] = [
     title: "IP & Technology Law",
     href: "/services/ip-technology",
     icon: Shield,
-    summary: "Protect your code, brand and digital assets with market-ready IP agreements.",
+    summary:
+      "Protect your code, brand and digital assets with market-ready IP agreements.",
     details: [
       "IP assignment agreements for freelance developers",
       "Trademark application advisory",
@@ -57,7 +68,8 @@ const services: ServiceItem[] = [
     title: "Startup Advisory",
     href: "/services/startup-advisory",
     icon: Shield,
-    summary: "Investor-ready legal structure, cap table advice and due diligence preparation.",
+    summary:
+      "Investor-ready legal structure, cap table advice and due diligence preparation.",
     details: [
       "Pre-seed and seed round legal structuring",
       "Cap table setup and ESOP design",
@@ -70,7 +82,8 @@ const services: ServiceItem[] = [
     title: "Fintech Compliance",
     href: "/services/fintech-compliance",
     icon: Zap,
-    summary: "CBN licensing, AML/KYC design and regulatory mapping for payments and lending.",
+    summary:
+      "CBN licensing, AML/KYC design and regulatory mapping for payments and lending.",
     details: [
       "CBN regulatory mapping for payment products",
       "Licensing pathway advisory",
@@ -83,7 +96,8 @@ const services: ServiceItem[] = [
     title: "AI Legal Services",
     href: "/services/ai-legal",
     icon: Cpu,
-    summary: "Training data, content ownership, algorithmic bias and agentic AI governance.",
+    summary:
+      "Training data, content ownership, algorithmic bias and agentic AI governance.",
     details: [
       "AI training data compliance audit",
       "Content ownership & disclosure framework",
@@ -96,7 +110,8 @@ const services: ServiceItem[] = [
     title: "Litigation",
     href: "/services/litigation",
     icon: Scale,
-    summary: "Dispute resolution and commercial litigation for digital businesses.",
+    summary:
+      "Dispute resolution and commercial litigation for digital businesses.",
     details: [
       "Commercial dispute resolution",
       "Breach of contract litigation",
@@ -141,12 +156,20 @@ export function ServiceTimeline() {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
 
       {/* Decorative flowing curve — top */}
-      <svg className="pointer-events-none absolute top-0 left-0 w-full h-24 text-gold/[0.04]" preserveAspectRatio="none" viewBox="0 0 1440 100" fill="currentColor">
+      <svg
+        className="pointer-events-none absolute top-0 left-0 w-full h-24 text-gold/[0.04]"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 100"
+        fill="currentColor">
         <path d="M0,30 C360,90 720,10 1440,50 L1440,0 L0,0 Z" />
       </svg>
 
       {/* Decorative flowing curve — bottom */}
-      <svg className="pointer-events-none absolute bottom-0 left-0 w-full h-24 text-gold/[0.03]" preserveAspectRatio="none" viewBox="0 0 1440 100" fill="currentColor">
+      <svg
+        className="pointer-events-none absolute bottom-0 left-0 w-full h-24 text-gold/[0.03]"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 100"
+        fill="currentColor">
         <path d="M0,70 C360,10 720,90 1440,30 L1440,100 L0,100 Z" />
       </svg>
 
@@ -159,8 +182,8 @@ export function ServiceTimeline() {
             Law firm for Nigerian digital businesses.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-grey-600">
-            From CAC registration to AI governance — full-spectrum legal services
-            built for the digital economy.
+            From CAC registration to AI governance — full-spectrum legal
+            services built for the digital economy.
           </p>
         </div>
 
@@ -195,7 +218,9 @@ export function ServiceTimeline() {
                 return (
                   <button
                     key={service.title}
-                    ref={(el) => { dotRefs.current[idx] = el; }}
+                    ref={(el) => {
+                      dotRefs.current[idx] = el;
+                    }}
                     onClick={() => setActiveIndex(idx)}
                     className={`relative flex w-full items-center gap-5 rounded-xl px-5 py-4 text-left transition-all duration-300 ${
                       isActive
@@ -304,7 +329,11 @@ export function ServiceTimeline() {
                   href={activeService.href}
                   className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-navy px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#3D3D3D] hover:shadow-lg">
                   <span>Explore {activeService.title}</span>
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" strokeWidth={3} />
+                  <ArrowRight
+                    size={16}
+                    className="transition-transform group-hover:translate-x-1"
+                    strokeWidth={3}
+                  />
                 </Link>
               </motion.div>
             </AnimatePresence>

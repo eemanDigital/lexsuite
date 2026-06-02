@@ -63,64 +63,75 @@ export default function AboutPage() {
       </section>
 
       {/* Story + Why */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="grid gap-10 lg:grid-cols-2">
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:gap-16 lg:grid-cols-2">
             <ScrollReveal direction="left">
-            <div className="space-y-5 rounded-2xl border border-grey-200 bg-white p-10">
-              <h2 className="text-3xl font-bold text-navy">Our story</h2>
-              <p className="text-base leading-7 text-grey-600">
-                LexSuite began as a practice for founders, operators and legal
-                teams who were building AI products, fintech services and SaaS
-                platforms in Nigeria. We saw the same legal gaps repeat:
-                unregistered companies, missing IP assignments, NDPA violations
-                and AI governance blind spots.
-              </p>
-              <p className="text-base leading-7 text-grey-600">
-                Today, we work with startups, fintechs and corporate teams to
-                create compliance-ready businesses that are protected from the
-                earliest stage of product development.
-              </p>
-            </div>
+              <div className="space-y-6 sm:space-y-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">Our story</h2>
+                <div className="space-y-4 sm:space-y-5">
+                  <p className="text-base sm:text-lg leading-7 sm:leading-8 text-grey-600">
+                    LexSuite began as a practice for founders, operators and legal
+                    teams who were building AI products, fintech services and SaaS
+                    platforms in Nigeria. We saw the same legal gaps repeat:
+                    unregistered companies, missing IP assignments, NDPA violations
+                    and AI governance blind spots.
+                  </p>
+                  <p className="text-base sm:text-lg leading-7 sm:leading-8 text-grey-600">
+                    Today, we work with startups, fintechs and corporate teams to
+                    create compliance-ready businesses that are protected from the
+                    earliest stage of product development.
+                  </p>
+                </div>
+              </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
-            <div className="space-y-5 rounded-2xl border border-grey-200 bg-white p-10">
-              <h2 className="text-3xl font-bold text-navy">Why LexSuite</h2>
-              <p className="text-base leading-7 text-grey-600">
-                We are a team of solicitors, corporate advisors, and
-                technology-minded legal strategists. Our advice is practical,
-                not academic — designed for founders who need legal certainty
-                without slowing down product delivery.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#07101c]">
-                Book a discovery call
-              </Link>
-            </div>
+              <div className="space-y-6 sm:space-y-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">Why LexSuite</h2>
+                <div className="space-y-4 sm:space-y-5">
+                  <p className="text-base sm:text-lg leading-7 sm:leading-8 text-grey-600">
+                    We are a team of solicitors, corporate advisors, and
+                    technology-minded legal strategists. Our advice is practical,
+                    not academic — designed for founders who need legal certainty
+                    without slowing down product delivery.
+                  </p>
+                  <p className="text-base sm:text-lg leading-7 sm:leading-8 text-grey-600">
+                    We combine deep regulatory expertise with product thinking to
+                    help companies build compliance into their core business logic,
+                    not as an afterthought.
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex rounded-full bg-navy px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#07101c]">
+                  Book a discovery call
+                </Link>
+              </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Pillars */}
-      <section className="bg-off-white py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-gold">Brand pillars</p>
-            <h2 className="mt-4 text-3xl font-bold text-navy">Principles that guide our work</h2>
+      {/* Pillars / Values */}
+      <section className="bg-off-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 sm:mb-20 text-center">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-gold">Our principles</p>
+            <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">What guides our work</h2>
           </div>
-          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <StaggerReveal className="grid gap-12 sm:gap-14 md:grid-cols-2 lg:gap-16">
             {pillars.map((pillar) => (
               <StaggerItem key={pillar.title}>
-              <div
-                className="rounded-2xl border border-grey-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-gold">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-gold/5">
-                  <pillar.icon size={22} className="text-gold" />
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <pillar.icon size={24} className="text-gold" />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-navy">{pillar.title}</h3>
+                  </div>
+                  <p className="text-base leading-7 text-grey-600 ml-10">{pillar.description}</p>
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-navy">{pillar.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-grey-600">{pillar.description}</p>
-              </div>
               </StaggerItem>
             ))}
           </StaggerReveal>
@@ -128,16 +139,19 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-white py-16">
+      <section className="bg-off-white py-20 sm:py-24">
         <ScrollReveal>
-        <TeamGrid />
+          <TeamGrid />
         </ScrollReveal>
       </section>
 
       {/* Accreditations */}
-      <section className="bg-off-white py-16">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <StaggerReveal className="grid gap-6 md:grid-cols-3">
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 sm:mb-20 text-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">Professional recognition</h2>
+          </div>
+          <StaggerReveal className="grid gap-12 sm:gap-14 md:grid-cols-2 lg:gap-16">
             {[
               {
                 icon: Award,
@@ -156,12 +170,15 @@ export default function AboutPage() {
               },
             ].map((item) => (
               <StaggerItem key={item.title}>
-              <div
-                className="rounded-2xl border border-grey-200 bg-white p-8 shadow-sm">
-                <item.icon size={28} className="text-gold" />
-                <p className="mt-4 text-sm uppercase tracking-[0.35em] text-gold">{item.title}</p>
-                <p className="mt-3 text-sm leading-7 text-grey-600">{item.detail}</p>
-              </div>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <item.icon size={24} className="text-gold" />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-navy">{item.title}</h3>
+                  </div>
+                  <p className="text-base leading-7 text-grey-600 ml-10">{item.detail}</p>
+                </div>
               </StaggerItem>
             ))}
           </StaggerReveal>

@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts } from "../lib/mdx";
-import { ScrollReveal, StaggerReveal, StaggerItem } from "../components/ui/ScrollReveal";
+import {
+  ScrollReveal,
+  StaggerReveal,
+  StaggerItem,
+} from "../components/ui/ScrollReveal";
 import { HeroContent } from "../components/home/HeroContent";
 import { TestimonialCarousel } from "../components/home/TestimonialCarousel";
 import { ClientLogos } from "../components/home/ClientLogos";
@@ -468,56 +472,60 @@ export default async function HomePage() {
       {/* ─── VIDEO / MEDIA ─── */}
       <section className="bg-white py-20">
         <ScrollReveal>
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="relative aspect-video overflow-hidden rounded-2xl bg-navy">
-            <div className="absolute inset-0 flex items-center justify-center bg-navy/60">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 transition hover:scale-105 hover:bg-gold">
-                <Play size={32} className="ml-1 text-navy" fill="currentColor" />
-              </div>
-            </div>
-            <div className="flex h-full items-center justify-center text-grey-600">
-              <Image
-                src="/og-image.svg"
-                alt="Video placeholder"
-                fill
-                className="object-cover opacity-40"
-              />
-            </div>
-          </div>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: Handshake,
-                title: "Experienced",
-                desc: "10+ years combined legal-tech practice",
-              },
-              {
-                icon: Users,
-                title: "Experts",
-                desc: "Specialist solicitors across all practice areas",
-              },
-              {
-                icon: Shield,
-                title: "Trusted",
-                desc: "50+ digital businesses represented",
-              },
-            ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/5">
-                  <item.icon size={22} className="text-gold" />
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-navy text-lg">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1 text-base font-medium text-text-dark">
-                    {item.desc}
-                  </p>
+          <div className="mx-auto max-w-7xl px-6 sm:px-8">
+            <div className="relative aspect-video overflow-hidden rounded-2xl bg-navy">
+              <div className="absolute inset-0 flex items-center justify-center bg-navy/60">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 transition hover:scale-105 hover:bg-gold">
+                  <Play
+                    size={32}
+                    className="ml-1 text-navy"
+                    fill="currentColor"
+                  />
                 </div>
               </div>
-            ))}
+              <div className="flex h-full items-center justify-center text-grey-600">
+                <Image
+                  src="/og-image.svg"
+                  alt="Video placeholder"
+                  fill
+                  className="object-cover opacity-40"
+                />
+              </div>
+            </div>
+            <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: Handshake,
+                  title: "Experienced",
+                  desc: "10+ years combined legal-tech practice",
+                },
+                {
+                  icon: Users,
+                  title: "Experts",
+                  desc: "Specialist solicitors across all practice areas",
+                },
+                {
+                  icon: Shield,
+                  title: "Trusted",
+                  desc: "50+ digital businesses represented",
+                },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/5">
+                    <item.icon size={22} className="text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-navy text-lg">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-base font-medium text-text-dark">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
         </ScrollReveal>
       </section>
 
@@ -557,38 +565,38 @@ export default async function HomePage() {
       {/* ─── TESTIMONIAL SECTION ─── */}
       <section className="bg-white py-20">
         <ScrollReveal>
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-gold">
-              We Understand
-            </p>
-            <h2 className="mt-4 text-4xl font-bold text-navy">
-              We understand the challenges facing digital businesses.
-            </h2>
+          <div className="mx-auto max-w-7xl px-6 sm:px-8">
+            <div className="text-center">
+              <p className="text-sm uppercase tracking-[0.35em] text-gold">
+                We Understand
+              </p>
+              <h2 className="mt-4 text-4xl font-bold text-navy">
+                We understand the challenges facing digital businesses.
+              </h2>
+            </div>
+            <div className="mt-10">
+              <TestimonialCarousel />
+            </div>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="inline-flex rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#3D3D3D]">
+                Contact Us
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex rounded-full border border-navy/20 px-7 py-3.5 text-sm font-semibold text-navy transition hover:bg-navy/5">
+                See All Our Reviews
+              </Link>
+            </div>
           </div>
-          <div className="mt-10">
-            <TestimonialCarousel />
-          </div>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#3D3D3D]">
-              Contact Us
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex rounded-full border border-navy/20 px-7 py-3.5 text-sm font-semibold text-navy transition hover:bg-navy/5">
-              See All Our Reviews
-            </Link>
-          </div>
-        </div>
         </ScrollReveal>
       </section>
 
       {/* ─── TEAM ─── */}
       <section className="bg-off-white py-20">
         <ScrollReveal>
-        <TeamGrid />
+          <TeamGrid />
         </ScrollReveal>
       </section>
 
@@ -613,15 +621,15 @@ export default async function HomePage() {
           <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {posts.map((post) => (
               <StaggerItem key={post.slug}>
-              <BlogCard
-                key={post.slug}
-                variant="standard"
-                image={post.coverImage}
-                date={post.date}
-                category={post.category}
-                title={post.title}
-                slug={post.slug}
-              />
+                <BlogCard
+                  key={post.slug}
+                  variant="standard"
+                  image={post.coverImage}
+                  date={post.date}
+                  category={post.category}
+                  title={post.title}
+                  slug={post.slug}
+                />
               </StaggerItem>
             ))}
           </StaggerReveal>
@@ -636,32 +644,32 @@ export default async function HomePage() {
       {/* ─── CONTACT / CTA ─── */}
       <section className="bg-navy py-20">
         <ScrollReveal>
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-gold">
-              Contact Us
-            </p>
-            <h2 className="mt-4 text-4xl font-bold text-white">
-              Ready to work with us?
-            </h2>
-            <p className="mt-4 text-lg text-grey-200 font-bold">
-              Tell us about your legal challenge and we&apos;ll respond with a
-              practical path forward.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-navy transition hover:brightness-95">
-                Book a Free Consultation
-              </Link>
-              <Link
-                href="mailto:hello@lexsuite.com.ng"
-                className="inline-flex rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
-                hello@lexsuite.com.ng
-              </Link>
+          <div className="mx-auto max-w-7xl px-6 sm:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm uppercase tracking-[0.35em] text-gold">
+                Contact Us
+              </p>
+              <h2 className="mt-4 text-4xl font-bold text-white">
+                Ready to work with us?
+              </h2>
+              <p className="mt-4 text-lg text-grey-200 font-bold">
+                Tell us about your legal challenge and we&apos;ll respond with a
+                practical path forward.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-navy transition hover:brightness-95">
+                  Book a Free Consultation
+                </Link>
+                <Link
+                  href="mailto:hello@lexsuite.com.ng"
+                  className="inline-flex rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+                  hello@lexsuite.com.ng
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
         </ScrollReveal>
       </section>
     </main>
