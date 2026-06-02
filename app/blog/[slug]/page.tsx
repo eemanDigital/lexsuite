@@ -1,5 +1,10 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllPosts, getPostBySlug, getPostSlugs } from "../../../lib/mdx";
+import {
+  getAllPosts,
+  getPostBySlug,
+  getPostSlugs,
+  remarkAddHeadingIds,
+} from "../../../lib/mdx";
 import { buildPageTitle, buildCanonical } from "../../../lib/seo";
 import { TableOfContents } from "../../../components/blog/TableOfContents";
 
@@ -37,7 +42,7 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
-  const { frontmatter, mdxSource, toc } = await getPostBySlug(params.slug);
+  const { frontmatter, content, toc } = await getPostBySlug(params.slug);
   const related = getAllPosts()
     .filter(
       (post) =>
@@ -92,7 +97,14 @@ export default async function BlogPostPage({
               <span>{frontmatter.readingTime}</span>
             </div>
             <div className="prose prose-invert mt-10 max-w-none text-grey-700">
-              <MDXRemote source={mdxSource} />
+              <MDXRemote
+                source={content}
+                options={{
+                  mdxOptions: {
+                    remarkPlugins: [remarkAddHeadingIds],
+                  },
+                }}
+              />
             </div>
           </article>
           <aside className="mt-8 w-72 lg:mt-0">

@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
 import { remark } from "remark";
 import GithubSlugger from "github-slugger";
 
@@ -47,44 +46,38 @@ export function getAllPosts(): PostData[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+export function remarkAddHeadingIds() {
+  return (tree: any) => {
+    const slugger = new GithubSlugger();
+    const visit = (node: any) => {
+      if (!node) return;
+      if (Array.isArray(node)) return node.forEach(visit);
+      if (node.type === "heading") {
+        const text =
+          node.children
+            ?.filter((c: any) => c.type === "text" || c.type === "inlineCode")
+            .map((c: any) => c.value)
+            .join("") || "";
+        const id = slugger.slug(text);
+        node.data = {
+          ...node.data,
+          hProperties: {
+            ...node.data?.hProperties,
+            id,
+          },
+        };
+      }
+      if (node.children) visit(node.children);
+    };
+    // @ts-ignore
+    visit(tree.children);
+  };
+}
+
 export async function getPostBySlug(slug: string) {
   const fullPath = path.join(blogsDirectory, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-  const remarkAddHeadingIds = () => {
-    return (tree: any) => {
-      const slugger = new GithubSlugger();
-      const visit = (node: any) => {
-        if (!node) return;
-        if (Array.isArray(node)) return node.forEach(visit);
-        if (node.type === "heading") {
-          const text =
-            node.children
-              ?.filter((c: any) => c.type === "text" || c.type === "inlineCode")
-              .map((c: any) => c.value)
-              .join("") || "";
-          const id = slugger.slug(text);
-          node.data = {
-            ...node.data,
-            hProperties: {
-              ...node.data?.hProperties,
-              id,
-            },
-          };
-        }
-        if (node.children) visit(node.children);
-      };
-      // @ts-ignore
-      visit(tree.children);
-    };
-  };
-
-  const source = await serialize(content, {
-    parseFrontmatter: false,
-    mdxOptions: {
-      remarkPlugins: [remarkAddHeadingIds],
-    },
-  });
 
   // extract simple TOC from markdown headings using github-slugger to match remark-generated ids
   const ast = await remark().parse(content as any);
@@ -110,7 +103,7 @@ export async function getPostBySlug(slug: string) {
 
   return {
     frontmatter: data,
-    mdxSource: source,
+    content,
     toc,
   };
 }
