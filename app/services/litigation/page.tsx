@@ -1,7 +1,7 @@
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "Litigation & Dispute Resolution | LexSuite Solicitors",
+  title: "Litigation & Dispute Resolution | ATL Solicitors",
   description:
     "Commercial litigation, dispute resolution and enforcement for technology businesses in Nigeria.",
 };

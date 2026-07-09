@@ -1,9 +1,9 @@
 import { ScrollReveal } from "../../components/ui/ScrollReveal";
 
 export const metadata = {
-  title: "Contact | LexSuite Solicitors",
+  title: "Contact | ATL Solicitors",
   description:
-    "Contact LexSuite Solicitors for CAC registration, NDPA compliance, AI legal audits and corporate advisory.",
+    "Contact ATL Solicitors for CAC registration, NDPA compliance, AI legal audits and corporate advisory.",
 };
 
 const services = [

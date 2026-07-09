@@ -36,7 +36,7 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
             News &amp; Insights
           </p>
           <h1 className="mt-4 text-5xl font-bold text-navy sm:text-6xl lg:text-7xl">
-            LexSuite Blog
+            ATL Blog
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-grey-500">
             AI law, NDPA compliance, IP protection, and startup legal best

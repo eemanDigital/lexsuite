@@ -1,5 +1,5 @@
 export function buildPageTitle(title: string) {
-  return `${title} | LexSuite Solicitors`;
+  return `${title} | ATL Solicitors`;
 }
 
 export function buildCanonical(path: string) {

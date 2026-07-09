@@ -22,11 +22,11 @@ import "@fontsource/jetbrains-mono/700.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | LexSuite Solicitors",
-    default: "LexSuite Solicitors — Nigerian Legal-Tech Law Firm",
+    template: "%s | ATL Solicitors",
+    default: "ATL Solicitors — Nigerian Legal-Tech Law Firm",
   },
   description:
-    "LexSuite Solicitors: Nigeria's foremost legal-tech solicitors. CAC registration, AI legal compliance, IP protection, NDPA advisory, fintech regulation, and startup legal structuring.",
+    "ATL Solicitors: Nigeria's foremost legal-tech solicitors. CAC registration, AI legal compliance, IP protection, NDPA advisory, fintech regulation, and startup legal structuring.",
   keywords: [
     "Nigerian law firm",
     "CAC registration Nigeria",
@@ -36,18 +36,18 @@ export const metadata: Metadata = {
     "fintech lawyer Nigeria",
     "IP protection Nigeria",
     "legal tech Nigeria",
-    "LexSuite Solicitors",
+    "ATL Solicitors",
   ],
   openGraph: {
     type: "website",
     locale: "en_NG",
     url: "https://lexsuite.com.ng",
-    siteName: "LexSuite Solicitors",
+    siteName: "ATL Solicitors",
     images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@LexSuiteLaw",
+    site: "@ATLLaw",
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://lexsuite.com.ng" },
@@ -56,18 +56,18 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "LexSuite Solicitors",
+  name: "ATL Solicitors",
   url: "https://lexsuite.com.ng",
   sameAs: [
     "https://linkedin.com/company/lexsuite",
-    "https://twitter.com/LexSuiteLaw",
+    "https://twitter.com/ATLLaw",
   ],
 };
 
 const legalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "LexSuite Solicitors",
+  name: "ATL Solicitors",
   description:
     "Nigerian legal-tech law firm specialising in CAC registration, AI legal compliance, IP protection, NDPA advisory, and startup structuring.",
   url: "https://lexsuite.com.ng",

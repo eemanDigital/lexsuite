@@ -4,9 +4,9 @@ import { TeamGrid } from "../../components/home/TeamGrid";
 import { Award, Shield, Scale, Users, Target } from "lucide-react";
 
 export const metadata = {
-  title: "About | LexSuite Solicitors",
+  title: "About | ATL Solicitors",
   description:
-    "About LexSuite — a Nigerian legal-tech firm offering AI legal, NDPA compliance, IP protection, and corporate advisory.",
+    "About ATL — a Nigerian legal-tech firm offering AI legal, NDPA compliance, IP protection, and corporate advisory.",
 };
 
 const pillars = [
@@ -49,12 +49,12 @@ export default function AboutPage() {
       <section className="bg-navy text-white py-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <ScrollReveal>
-            <p className="text-sm uppercase tracking-[0.35em] text-gold">About LexSuite</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-gold">About ATL</p>
             <h1 className="mt-6 text-4xl font-bold sm:text-5xl">
               A Nigerian legal team built for the digital economy.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-grey-200">
-              LexSuite Solicitors was founded to solve a growing problem:
+              ATL Solicitors was founded to solve a growing problem:
               technology founders in Nigeria need legal advice that understands
               both the law and the software powering their products.
             </p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">Our story</h2>
                 <div className="space-y-4 sm:space-y-5">
                   <p className="text-base sm:text-lg leading-7 sm:leading-8 text-grey-600">
-                    LexSuite began as a practice for founders, operators and legal
+                    ATL began as a practice for founders, operators and legal
                     teams who were building AI products, fintech services and SaaS
                     platforms in Nigeria. We saw the same legal gaps repeat:
                     unregistered companies, missing IP assignments, NDPA violations
@@ -87,7 +87,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div className="space-y-6 sm:space-y-8">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">Why LexSuite</h2>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">Why ATL</h2>
                 <div className="space-y-4 sm:space-y-5">
                   <p className="text-base sm:text-lg leading-7 sm:leading-8 text-grey-600">
                     We are a team of solicitors, corporate advisors, and

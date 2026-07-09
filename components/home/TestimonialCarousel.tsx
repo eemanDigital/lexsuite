@@ -7,7 +7,7 @@ import { Testimonial } from "./Testimonial";
 const items = [
   {
     quote:
-      "LexSuite helped us understand AI risk and rewrote our vendor agreements — they are practitioners who understand engineering.",
+      "ATL helped us understand AI risk and rewrote our vendor agreements — they are practitioners who understand engineering.",
     author: "Adaobi Chukwu, CTO — FinPay",
     meta: "Client since 2025",
   },

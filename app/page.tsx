@@ -288,7 +288,7 @@ export default async function HomePage() {
               <div className="text-center">
                 <Award size={48} className="mx-auto text-navy" strokeWidth={1.2} />
                 <p className="mt-3 text-2xl font-bold text-navy">2026</p>
-                <p className="text-sm font-bold text-text-dark">LexSuite<br />Legal-Tech Award</p>
+                <p className="text-sm font-bold text-text-dark">ATL<br />Legal-Tech Award</p>
               </div>
             </div>
             <div className="h-64 overflow-hidden rounded-2xl bg-grey-100">
@@ -321,7 +321,7 @@ export default async function HomePage() {
             advice.&rdquo;
           </blockquote>
           <div className="mt-10 flex items-center justify-center gap-4 text-sm text-grey-400">
-            <span className="font-semibold text-white">LexSuite</span>
+            <span className="font-semibold text-white">ATL</span>
             <span className="text-gold">|</span>
             <span>SME-focused Firms</span>
             <span className="text-gold">|</span>
@@ -403,7 +403,7 @@ export default async function HomePage() {
                 <span className="text-gold">Code and Law.</span>
               </h2>
               <p className="mt-6 text-base leading-relaxed text-text-dark font-medium sm:text-lg max-w-xl">
-                LexSuite is a Nigerian legal-tech law firm built for the digital
+                ATL is a Nigerian legal-tech law firm built for the digital
                 economy. We speak both <strong>legal precedent</strong> and{" "}
                 <strong>product roadmaps</strong> — helping startups, fintechs,
                 and established businesses navigate regulation without slowing
@@ -445,7 +445,7 @@ export default async function HomePage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/my-image.png"
-                  alt="LexSuite Principal Partner"
+                  alt="ATL Principal Partner"
                   width={600}
                   height={750}
                   className="w-full h-auto object-cover aspect-[4/5]"
@@ -608,7 +608,7 @@ export default async function HomePage() {
               Insights
             </p>
             <h2 className="mt-3 text-4xl font-bold text-navy sm:text-5xl">
-              Latest from LexSuite
+              Latest from ATL
             </h2>
           </div>
 

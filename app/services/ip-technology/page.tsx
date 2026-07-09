@@ -1,7 +1,7 @@
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "IP Protection & Technology Law | LexSuite",
+  title: "IP Protection & Technology Law | ATL",
   description:
     "Protect your code and brand with IP assignments, trademark advisory and software licensing for Nigerian startups.",
 };

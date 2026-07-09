@@ -3,7 +3,7 @@ import { ScrollReveal, StaggerReveal, StaggerItem } from "../../components/ui/Sc
 import { ArrowRight, Building2, Shield, Lock, Rocket, Zap, Cpu, Scale, FileText, CheckCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Services | LexSuite Solicitors",
+  title: "Services | ATL Solicitors",
   description:
     "Full-spectrum legal-tech services: CAC registration, IP protection, NDPA compliance, fintech regulation and AI legal services.",
 };
@@ -149,7 +149,7 @@ export default function ServicesPage() {
               <span className="text-gold">modern Nigerian digital businesses.</span>
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-grey-200 sm:text-xl">
-              LexSuite blends legal precision with technology awareness to make
+              ATL blends legal precision with technology awareness to make
               compliance a live business advantage — from CAC registration to AI governance.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">

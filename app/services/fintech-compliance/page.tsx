@@ -1,7 +1,7 @@
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "Fintech & CBN Compliance | LexSuite",
+  title: "Fintech & CBN Compliance | ATL",
   description:
     "CBN licensing, AML/KYC design and regulatory mapping for Nigerian fintech and payments platforms.",
 };

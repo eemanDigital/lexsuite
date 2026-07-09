@@ -1,7 +1,7 @@
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "CAC Registration & Corporate Structuring | LexSuite",
+  title: "CAC Registration & Corporate Structuring | ATL",
   description:
     "Fast CAC registration and founder-friendly governance for Nigerian digital businesses.",
 };

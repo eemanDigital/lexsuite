@@ -141,7 +141,7 @@ export function ServiceTimeline() {
   const activeService = services[activeIndex];
 
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-16 sm:py-24">
       {/* Silk gradient base */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-off-white to-gold/[0.02]" />
 
@@ -173,29 +173,29 @@ export function ServiceTimeline() {
         <path d="M0,70 C360,10 720,90 1440,30 L1440,100 L0,100 Z" />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="mb-14 text-center">
-          <span className="inline-block rounded-full border border-gold/20 bg-gold/5 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8">
+        <div className="mb-10 sm:mb-14 text-center">
+          <span className="inline-block rounded-full border border-gold/20 bg-gold/5 px-4 sm:px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
             What we do
           </span>
-          <h2 className="mt-6 text-4xl font-bold text-navy sm:text-5xl">
+          <h2 className="mt-5 sm:mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
             Law firm for Nigerian digital businesses.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-grey-600">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base md:text-lg leading-6 sm:leading-7 text-grey-600">
             From CAC registration to AI governance — full-spectrum legal
             services built for the digital economy.
           </p>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start">
+        <div className="grid gap-8 sm:gap-10 md:gap-12 md:grid-cols-[1fr_1.3fr] md:items-start lg:grid-cols-[1fr_1.4fr]">
           {/* ─── LEFT: TIMELINE LIST ─── */}
-          <div className="timeline-track relative rounded-2xl bg-white p-6 shadow-sm">
+          <div className="timeline-track relative rounded-2xl bg-white p-4 sm:p-5 md:p-6 shadow-sm">
             {/* Background line */}
-            <div className="absolute left-[31px] top-8 h-[calc(100%-64px)] w-[3px] rounded-full bg-grey-100" />
+            <div className="absolute left-[22px] sm:left-[26px] md:left-[31px] top-8 h-[calc(100%-64px)] w-[3px] rounded-full bg-grey-100" />
 
             {/* Animated gold indicator dot */}
             <motion.div
-              className="absolute left-[23px] z-10"
+              className="absolute left-[14px] sm:left-[18px] md:left-[23px] z-10"
               animate={{ top: indicatorTop - 14 }}
               transition={{ type: "spring", stiffness: 180, damping: 24 }}>
               <div className="flex h-7 w-[19px] items-center justify-center">
@@ -205,12 +205,12 @@ export function ServiceTimeline() {
 
             {/* Animated gold line segment */}
             <motion.div
-              className="absolute left-[31px] w-[3px] rounded-full bg-gradient-to-b from-gold to-gold/60"
+              className="absolute left-[22px] sm:left-[26px] md:left-[31px] w-[3px] rounded-full bg-gradient-to-b from-gold to-gold/60"
               animate={{ top: 32, height: Math.max(indicatorTop - 32 + 4, 0) }}
               transition={{ type: "spring", stiffness: 180, damping: 24 }}
             />
 
-            <div className="space-y-1">
+            <div className="space-y-0.5 sm:space-y-1">
               {services.map((service, idx) => {
                 const isActive = idx === activeIndex;
                 const Icon = service.icon;
@@ -222,20 +222,20 @@ export function ServiceTimeline() {
                       dotRefs.current[idx] = el;
                     }}
                     onClick={() => setActiveIndex(idx)}
-                    className={`relative flex w-full items-center gap-5 rounded-xl px-5 py-4 text-left transition-all duration-300 ${
+                    className={`relative flex w-full items-center gap-3 sm:gap-4 md:gap-5 rounded-xl px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 text-left transition-all duration-300 ${
                       isActive
                         ? "bg-gradient-to-r from-gold/5 via-gold/5 to-transparent shadow-sm"
                         : "hover:bg-grey-50"
                     }`}>
                     {/* Icon */}
                     <div
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
+                      className={`flex h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-lg sm:rounded-xl transition-all duration-300 ${
                         isActive
                           ? "bg-gold shadow-md shadow-gold/20"
                           : "bg-grey-100"
                       }`}>
                       <Icon
-                        size={22}
+                        size={18}
                         className={`transition-colors duration-300 ${
                           isActive ? "text-white" : "text-grey-500"
                         }`}
@@ -245,12 +245,12 @@ export function ServiceTimeline() {
                     {/* Text */}
                     <div className="min-w-0 flex-1">
                       <span
-                        className={`block text-base font-bold transition-colors duration-300 ${
+                        className={`block text-sm md:text-base font-bold transition-colors duration-300 ${
                           isActive ? "text-gold" : "text-navy"
                         }`}>
                         {service.title}
                       </span>
-                      <span className="mt-0.5 block truncate text-sm font-medium text-grey-500">
+                      <span className="mt-0.5 hidden sm:block truncate text-xs md:text-sm font-medium text-grey-500">
                         {service.summary}
                       </span>
                     </div>
@@ -262,7 +262,7 @@ export function ServiceTimeline() {
                           ? "text-gold opacity-100"
                           : "text-grey-300 opacity-0"
                       }`}>
-                      <ArrowRight size={18} strokeWidth={3} />
+                      <ArrowRight size={16} strokeWidth={3} />
                     </div>
                   </button>
                 );
@@ -279,46 +279,54 @@ export function ServiceTimeline() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="rounded-2xl border border-grey-200 bg-white p-8 shadow-sm sm:p-10">
+                className="rounded-2xl border border-grey-200 bg-white p-5 sm:p-6 md:p-8 shadow-sm lg:p-10">
                 {/* Header with icon */}
-                <div className="flex items-center gap-5">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 shadow-inner">
+                <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
+                  <div className="flex h-11 w-11 sm:h-14 sm:w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 shadow-inner">
                     {(() => {
                       const Icon = activeService.icon;
-                      return <Icon size={30} className="text-gold" />;
+                      return <Icon size={22} className="text-gold sm:hidden" />;
+                    })()}
+                    {(() => {
+                      const Icon = activeService.icon;
+                      return <Icon size={26} className="text-gold hidden sm:block md:hidden" />;
+                    })()}
+                    {(() => {
+                      const Icon = activeService.icon;
+                      return <Icon size={30} className="text-gold hidden md:block" />;
                     })()}
                   </div>
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
                       Practice Area
                     </span>
-                    <h3 className="mt-1 text-2xl font-bold text-navy sm:text-3xl">
+                    <h3 className="mt-1 text-lg sm:text-xl md:text-2xl font-bold text-navy lg:text-3xl">
                       {activeService.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Summary */}
-                <p className="mt-6 text-base leading-7 text-grey-600 font-medium sm:text-lg">
+                <p className="mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base leading-6 sm:leading-7 text-grey-600 font-medium lg:text-lg">
                   {activeService.summary}
                 </p>
 
                 {/* Gold divider */}
-                <div className="my-6 h-px w-full bg-gradient-to-r from-gold/60 via-gold/20 to-transparent" />
+                <div className="my-4 sm:my-5 md:my-6 h-px w-full bg-gradient-to-r from-gold/60 via-gold/20 to-transparent" />
 
                 {/* Detail list */}
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-grey-500">
                   What&apos;s included
                 </span>
-                <ul className="mt-4 space-y-3.5">
+                <ul className="mt-3 sm:mt-3.5 md:mt-4 space-y-2 sm:space-y-2.5 md:space-y-3">
                   {activeService.details.map((detail, i) => (
                     <motion.li
                       key={detail}
                       initial={{ opacity: 0, x: -16 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.06, duration: 0.3 }}
-                      className="flex items-start gap-4 text-sm text-grey-700 sm:text-base">
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
+                      className="flex items-start gap-2.5 sm:gap-3 md:gap-4 text-sm text-grey-700">
+                      <span className="mt-1.5 sm:mt-2 h-2 w-2 shrink-0 rounded-full bg-gold" />
                       <span className="font-medium">{detail}</span>
                     </motion.li>
                   ))}
@@ -327,7 +335,7 @@ export function ServiceTimeline() {
                 {/* CTA */}
                 <Link
                   href={activeService.href}
-                  className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-navy px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#3D3D3D] hover:shadow-lg">
+                  className="group mt-5 sm:mt-6 md:mt-8 inline-flex items-center gap-3 rounded-xl bg-navy px-5 sm:px-6 md:px-7 py-3 sm:py-3.5 text-sm font-bold text-white transition-all hover:bg-[#3D3D3D] hover:shadow-lg">
                   <span>Explore {activeService.title}</span>
                   <ArrowRight
                     size={16}

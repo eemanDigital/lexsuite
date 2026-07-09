@@ -1,7 +1,7 @@
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "NDPA Data Privacy Compliance | LexSuite",
+  title: "NDPA Data Privacy Compliance | ATL",
   description:
     "NDPA-compliant privacy audits, DPIAs, breach response and NDPC registration advisory for Nigerian businesses.",
 };

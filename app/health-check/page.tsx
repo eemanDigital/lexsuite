@@ -1,7 +1,7 @@
 import HealthCheckQuiz from "../../components/health-check/HealthCheckQuiz";
 
 export const metadata = {
-  title: "AI Legal Health Check | LexSuite",
+  title: "AI Legal Health Check | ATL",
   description:
     "Interactive 15-question AI legal health check to assess risk across training data, governance, bias and agentic AI.",
 };

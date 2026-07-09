@@ -36,7 +36,7 @@ export function getAllPosts(): PostData[] {
         title: data.title ?? slug,
         excerpt: data.excerpt ?? "",
         date: data.date ?? "2025-01-01",
-        author: data.author ?? "LexSuite Solicitors",
+        author: data.author ?? "ATL Solicitors",
         category: data.category ?? "Insights",
         tags: data.tags ?? [],
         coverImage: data.coverImage ?? "/og-image.svg",

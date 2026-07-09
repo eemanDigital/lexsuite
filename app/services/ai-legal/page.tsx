@@ -4,7 +4,7 @@ import { ScrollReveal } from "../../../components/ui/ScrollReveal";
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "AI Legal Services | LexSuite Solicitors",
+  title: "AI Legal Services | ATL Solicitors",
   description:
     "Specialist AI legal services including training data audits, algorithmic fairness, agentic AI governance and synthetic identity prevention.",
 };
@@ -95,7 +95,7 @@ export default function AILegalPage() {
       <ServiceDetailHero
         label="AI Legal Services"
         title="The global AI legal crisis is here. We help Nigerian companies survive it."
-        subtitle="LexSuite is uniquely positioned to diagnose both the technical root of AI risk and the legal liability that flows from it."
+        subtitle="ATL is uniquely positioned to diagnose both the technical root of AI risk and the legal liability that flows from it."
       />
 
       <ServiceDetailConnector />

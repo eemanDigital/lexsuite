@@ -58,12 +58,12 @@ export default async function BlogPostPage({
     image: frontmatter.coverImage || "/og-image.svg",
     author: {
       "@type": "Organization",
-      name: frontmatter.author || "LexSuite Solicitors",
+      name: frontmatter.author || "ATL Solicitors",
     },
     datePublished: frontmatter.date,
     publisher: {
       "@type": "Organization",
-      name: "LexSuite Solicitors",
+      name: "ATL Solicitors",
       logo: {
         "@type": "ImageObject",
         url: "https://lexsuite.com.ng/logo-dark.svg",

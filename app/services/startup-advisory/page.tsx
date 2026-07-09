@@ -1,7 +1,7 @@
 import { ServiceDetailHero, ServiceDetailSection, ServiceDetailGrid, ServiceDetailFeatureBlock, ServiceDetailBullets, ServiceDetailPricing, ServiceDetailConnector } from "../../../components/services/ServiceDetailLayout";
 
 export const metadata = {
-  title: "Startup Structuring & Investor Readiness | LexSuite",
+  title: "Startup Structuring & Investor Readiness | ATL",
   description:
     "Cap table modelling, shareholders agreements and investor-ready legal packaging for Nigerian startups.",
 };
